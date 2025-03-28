@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= persona.name.first + " " + persona.name.last
+  body
+    h1= persona.name.title + " " + persona.name.first + " " + persona.name.last
+    p Email: #{persona.email}
+    p Nazionalità: #{persona.nat}
+
+    if persona.id && persona.id.value
+      p ID: #{persona.id.value}
+    
+    img(src=persona.picture.large, alt="Foto di " + persona.name.first, width="200")
+
