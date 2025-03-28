@@ -8,6 +8,9 @@ router.get('/users', function(req, res, next) {
 });
 router.get('/users/:email', function(req, res, next) {
   const persona = people.find(P => P.email === req.params.email);
+  if (!persona) {
+    return res.status(404).send('User not found');
+  }
   res.send(persona);
 
 });
